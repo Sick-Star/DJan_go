@@ -1,0 +1,11 @@
+{%extends "base.html"%}
+{%block title%} User page {%endblock%}
+
+{%block content%}
+<form action="#" method="POST">
+    <!--'placeholder is the temporary text shown in the box before the user enters something'-->
+    <input type="email" name="mail" placeholder="Enter email" value="{{email if emial}}"/>
+    <input type="submit" value="Submit"/>
+
+</form>
+{%endblock%}

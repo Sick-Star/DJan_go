@@ -1,0 +1,13 @@
+{%extends "base.html"%}
+{%block title%}   {{"Login page".upper()}}   {%endblock%} <!--Using jinja to turn the login page to uppercase-->
+
+{%block content%}
+
+<form action="#" method="post"> <!--# means we want to submit the form to the current page-->
+    <p>Name:</p> 
+    <!--making an input inside a paragraph.  -->
+    <p> <input type="text" name="nm" /> </p> <!--nm will be used by flask 'request.form['nm']' to be called -->
+    <p> <input style="color:red" type="submit" name="submit"/> </p>  <!--<input> is a void elemnet so you don't need </input>-->
+</form> <!--<form> is used to collect information from the user and submit it somewhere, usually a server  -->
+
+{%endblock%}
