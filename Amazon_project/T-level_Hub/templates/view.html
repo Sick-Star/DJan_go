@@ -1,0 +1,46 @@
+{%extends "base.html"%}
+
+{%block extra_css%}
+
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 200%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 4px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+
+{%endblock%}
+
+
+{%block content%}
+
+    <table>
+        <tr>
+            <th style="color:red">Username:</th>
+            <th style="color:red">Password:</th>
+            <th style="color:red">Email:</th>
+            <th style="color:red">Age:</th>
+        </tr>
+
+    {%for value in values%}
+        <tr>
+            <th style="color:black">{{value.username}}</th>
+            <th style="color:black">{{value.password}}</th>
+            <th style="color:black">{{value.email}}</th>
+            <th style="color:black">{{value.age}}</th>
+        </tr>
+<!--        <p>Username: {{value.username}}, password:{{value.password}}</p>-->
+    {%endfor%}
+     </table>
+{%endblock%}

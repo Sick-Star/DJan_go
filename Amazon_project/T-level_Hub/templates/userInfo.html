@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+
+{% block extra_css %}
+<style>
+    .login-container {
+        max-width: 10000px;
+        margin: 60px auto;
+        padding: 30px;
+        background-color: lightgrey;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .login-container h2 {
+        text-align: center;
+        margin-bottom: 25px;
+    }
+
+    .login-container form p {
+        margin-bottom: 15px;
+    }
+
+    .login-container input[type="text"],
+    .login-container input[type="password"] {
+        width: 100%;
+        height: 45px;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .login-container input[type="submit"] {
+        width: 100%;
+        height: 45px;
+        background-color: #FF9900;
+        color: #232F3E;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .login-container input[type="submit"]:hover {
+        background-color: #E68A00;
+    }
+</style>
+{% endblock %}
+
+
+
+{% block content %}
+    <form action="{{ url_for('profile') }}" method="POST">
+        <div class="login-container">
+            <h2>User Profile</h2>
+            <p style="color:grey;">Username: <b style="color:red;">{{username}} </b></p>
+            <p style="color:grey;">Password: <b style="color:red;">{{password}} </b></p>
+            <p style="color:grey;">Email: <b style="color:red;">{{email}} </b></p>
+            <p style="color:grey;">Age: <b style="color:red;">{{age}} </b></p>
+
+            <p style="font-size:80%; color:blue;">set<span style="color:red;">/</span>change email:</p>
+            <p>
+                    <input
+                            type="email"
+                            name="mail"
+                            placeholder="Register your email"
+
+                    />
+                </p>
+
+            <p style="font-size:80%; color:blue;">set<span style="color:red;">/</span>change date of birth:</p>
+            <p>
+                    <input
+                            type="date"
+                            name="age"
+                            placeholder="enter your age"
+
+                    />
+                </p>
+
+            <p> <br> <input style="background-color:lightblue;" type="submit" name="Submit" value="save changes"/> </br></p>
+
+        </div>
+    </form>
+{% endblock %}
